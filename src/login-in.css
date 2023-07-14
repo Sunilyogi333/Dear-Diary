@@ -19,7 +19,6 @@ body {
     background-color: #f0f2f5;
 
 }
-
 .content {
     display: flex;
     /* justify-content: space-between; */
@@ -95,6 +94,7 @@ input::placeholder {
 
 input:focus::placeholder {
     color: #a3a6af;
+    /* transition: translateY(20px); */
 }
 
 input:focus {
