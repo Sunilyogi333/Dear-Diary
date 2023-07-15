@@ -90,7 +90,8 @@ li a:hover {
 
 .content {
    /* background-image: linear-gradient(#3E5151, #DECBA4); */
-   /* background-color: #DECBA4; */
+   background-color: #ffffff;
+
    display: flex;
    flex-direction: column;
    font-family: "Open Sans", Helvetica, sans-serif;
@@ -152,7 +153,7 @@ li a:hover {
    justify-content: center;
    flex-wrap: wrap;
    align-items: center;
-   width: 710px;
+   width:60%;
    /* background-color: white; */
 }
 
@@ -181,6 +182,7 @@ li a:hover {
    font-weight: 540;
    margin-bottom: 20px;
 }
+
 #flocking {
    /* width: 100%; */
    width: 361px;
@@ -191,7 +193,7 @@ li a:hover {
    display: flex;
    justify-content: space-around;
    align-items: center;
-   flex-wrap:wrap;
+   flex-wrap: wrap;
    padding: 50px 0px;
    gap: 8px;
 }
@@ -204,15 +206,18 @@ li a:hover {
 .part3-ii {
    width: 440px;
 }
-.part4{
+
+.part4 {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    width: 100%;
 }
+
 .part4-i {
-   width: 952px;
+   width: 80%;
+   /* width: 952px; */
    display: flex;
    justify-content: space-around;
    flex-wrap: wrap;
@@ -220,15 +225,18 @@ li a:hover {
    /* align-items: center; */
    text-align: center;
 }
-.part4 p{
+
+.part4 p {
    font-size: 16px;
    color: #4b525b;
 }
-.feature-icon h2{
+
+.feature-icon h2 {
    font-size: 22px;
 }
-.feature-icon{
-   width:234px ;
+
+.feature-icon {
+   width: 234px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -239,7 +247,7 @@ li a:hover {
    height: 80px;
    width: 80px;
    border: 1px solid black;
-   border-radius:50%;
+   border-radius: 50%;
    /* text-align: center; */
    display: flex;
    align-items: center;
@@ -249,16 +257,138 @@ li a:hover {
 .icon-img img {
    width: 60px;
 }
-#sjournal-icon{
+
+#sjournal-icon {
    margin-left: 10px;
 }
-.part-5{
+
+.part-5 {
    margin-top: 80px;
 }
-.part-5 .part5-i h2{
+
+.part-5 .part5-i h2 {
    font-weight: 500;
    font-size: 30.5px;
 }
-.part-5 .part5-ii a{
+
+.part-5 .part5-ii a {
    color: #4b525b;
+}
+
+.SYF {
+   margin-top: 60px;
+   padding-top: 40px;
+   /* height: 100px; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   background-color: #4b525b;
+   font-size: 30px;
+   color: #e9e0e0;
+}
+.part-6 {
+   /* height: 500px; */
+   background-color: #4b525b;
+   display: flex;
+   /* flex-wrap: wrap; */
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   padding-top: 12px;
+}
+
+.p6-feedback {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-around;
+   width: 50%;
+}
+
+.part6-i {
+   /* background-color: red; */
+   width: 350px;
+   /* padding: 10px 10px; */
+}
+
+.part6-i label {
+   margin-bottom: 5px;
+   color: #e9e0e0;
+   font-weight: 600;
+}
+
+.part6-ii {
+   /* background-color: red; */
+   width: 350px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-bottom: 15px ;
+}
+
+.part6-ii textarea {
+   /* margin-top: 10px; */
+   padding: 10px 10px;
+   width: 100%;
+   /* border-style: none; */
+   border-radius: 6px;
+   background-color: #f2e8e8;
+   font-size: 15px;
+}
+.part6-ii textarea:focus{
+   outline: none;
+}
+.givefeedback {
+   display: flex;
+   flex-direction: column;
+   text-align: left;
+   margin-top: 10px;
+}
+
+.givefeedback input {
+   width: 100%;
+   height: 45px;
+   /* margin-top: 20px; */
+   background-color: #f2e8e8;
+
+   padding: 10px 14px;
+   font-size: 17px;
+   border-radius: 4px;
+   border: 1px solid rgb(170, 160, 160);
+}
+.givefeedback input:focus{
+   outline: none;
+}
+.fsubmit{
+   text-align: center;
+   padding: 13px 30px;
+   letter-spacing: .25px;
+   cursor: pointer;
+   color: #fff;
+   background-color: #0F8CDF;
+   border-radius: 4px;
+   border-style: none;
+   font-size: 18px;
+   font-weight: 700;
+   margin-top:20px;
+   margin-bottom:20px;
+   height: 40px;
+   width: 140px;
+}
+.fsubmit:hover{
+   background-color: #3b73bd;
+}
+.foot {
+   padding-top: 30px;
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #4b525b;
+}
+
+.foot a {
+   font-size: 17px;
+   color: #ffffff;
 }
