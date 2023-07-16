@@ -73,6 +73,9 @@ body {
     background-color: #ffffff;
     /* background-color: red; */
 }
+form{
+    /* text-align: center; */
+}
 
 #log-in {
     font-size: 32px;
@@ -111,7 +114,8 @@ a:hover {
 }
 
 #pass {
-    margin: 10px 0px;
+    margin: 20px 0px;
+    text-align: left;
 }
 
 .sub {
@@ -119,6 +123,9 @@ a:hover {
     background-color: ffffff;
     font-size: 25px;
     font-weight: bold;
+}
+#par{
+    margin-bottom: 10px;
 }
 
 .sign {
@@ -147,6 +154,7 @@ a:hover {
     margin-top: 8px;
     gap: 20px;
     display: flex;
+    justify-content: center;
     /* flex-direction: row; */
 }
 
