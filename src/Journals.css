@@ -15,6 +15,9 @@ body {
    height: 100vh;
    background-color: rgb(52 57 66);
    position: fixed;
+   left: 0px;
+   top: 0px;
+   right: 0px;
 }
 
 .main {
@@ -64,14 +67,14 @@ nav {
    height: 55.5px;
    text-align: left;
    background-color: rgb(52 57 66);
+   color: #ffffff;
 }
 
 .nav1-lowerpart {
    width: 270px;
    /* margin-right: 5px; */
    height: 100vh;
-   /* object-position: fixed; */
-   position: fixed;
+   
    display: flex;
    flex-direction: column;
    justify-content: left;
@@ -191,7 +194,8 @@ li a:hover {
    padding-left: 278px;
    display: flex;
    justify-content: center;
-   /* height: auto; */
+   height: 100%;
+   /* overflow: hidden; */
 }
 
 .Entries{
