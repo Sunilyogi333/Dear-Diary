@@ -1,39 +1,56 @@
+<?php 
+    include 'connect.php';
+    if(isset($_POST['submit'])){
+        $email=$_POST['uemail'];
+        $password=$_POST['upassword'];
+
+        $sql = " SELECT * FROM users where uemail='$email' AND upassword='$password'";
+        $result= mysqli_query($conn,$sql);
+        $num= mysqli_num_rows($result);
+        if($num==1){
+            session_start();
+            $_SESSION['login']=true;
+            header("location: about.php");
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login in</title>
     <link rel="stylesheet" href="login-in.css">
 </head>
+<?php
 
+?>
 <body>
     <div class="main">
         <div class="content">
             <div class="branding">
                 <h1 class="brand-name">Dear Diary</h1>
-                <img id="image" src="/img/pic.png" alt="branding photo">
+                <img id="image" src="/Dear-Diary/img/pic.png" alt="branding photo">
                 <h3 id="quote">"Within the pages of your diary, lies the untold beauty of your soul."</h3>
             </div>
             <div class="log-in-user">
-                <form>
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                     <p id="log-in">Welcome</p>
-                    <input type="email" placeholder="Email or phone number">
-                    <input type="text" required>
+                    <input type="email" name="uemail" placeholder="Email or phone number">
+                    <input type="password" name="upassword" placeholder="Password" required>
                     <a id="pass" href="#">Forgot password ?</a>
-                    <input class="sub" type="submit" value="Log in">
+                    <input class="sub" type="submit" name="submit" value="Log in">
                     <div class="sign">
-                        <p>Don't have an account?</p><a href="/src/sign-up.html">sign-up</a>
+                        <p>Don't have an account?</p><a href="sign-up.php">sign-up</a>
                     </div>
 
                     <div class="sign-in-with">
                         <p id="par">OR</p>
                         <p>Sign in with</p>
                         <div class="simages">
-                            <img class="sign-in-image" src="/img/Facebook_icon.png" alt="Facebook icon">
-                            <img class="sign-in-image" src="/img/favicon.png" alt="Google icon">
-                            <img class="sign-in-image" src="/img/twitter_icon.png" alt="twitter icon">
+                            <img class="sign-in-image" src="/Dear-Diary/img/Facebook_icon.png" alt="Facebook icon">
+                            <img class="sign-in-image" src="/Dear-Diary/img/favicon.png" alt="Google icon">
+                            <img class="sign-in-image" src="/Dear-Diary/img/twitter_icon.png" alt="twitter icon">
                         </div>
                     </div>
                 </form>
