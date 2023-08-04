@@ -5,13 +5,19 @@ if (isset($_POST['submit'])) {
     $uemail = $_POST['uemail'];
     $upassword = $_POST['upassword'];
     $cpassword = $_POST['cpassword'];
+   if(!empty($uname)&&!empty($uemail)&&!empty($cpassword)){
     if ($upassword = $cpassword) {
         $sql = "
     INSERT INTO users(uname,uemail,upassword,cpassword)
     VALUES ('$uname','$uemail','$upassword', current_timestamp())
     ";
     $result = mysqli_query($conn,$sql);
+    header('location:login.php');
     }
+    else{
+        echo "Enter credentials first";
+    }
+   }
 }
 ?>
 <!DOCTYPE html>
@@ -46,7 +52,7 @@ if (isset($_POST['submit'])) {
                     
                     <hr>
                     <div class="log-in-here">
-                        <p>Already have an account?</p><a href="login-in.php">Login Here</a>
+                        <p>Already have an account?</p><a href="login.php">Login Here</a>
                     </div>
                 </div>
             </form>

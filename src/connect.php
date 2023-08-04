@@ -9,4 +9,7 @@ $conn = mysqli_connect($servername,$username,$password,$database_name);
 if(!$conn){
     die("Connection Error" .mysqli_connect_error());
 }
+// else{
+// echo "khatra";
+// }
 ?>

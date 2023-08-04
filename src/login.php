@@ -1,21 +1,22 @@
-<?php 
-    include 'connect.php';
-    if(isset($_POST['submit'])){
-        $email=$_POST['uemail'];
-        $password=$_POST['upassword'];
-
-        $sql = " SELECT * FROM users where uemail='$email' AND upassword='$password'";
-        $result= mysqli_query($conn,$sql);
-        $num= mysqli_num_rows($result);
-        if($num==1){
-            session_start();
-            $_SESSION['login']=true;
-            header("location: about.php");
-        }
+<?php
+include 'connect.php';
+if (isset($_POST['submit'])) {
+    $email = $_POST['uemail'];
+    $password = $_POST['upassword'];
+    $sql = " SELECT * FROM users where uemail='$email' AND upassword='$password'";
+    $result = mysqli_query($conn, $sql);
+    $num = mysqli_num_rows($result);
+    if ($num > 0) {
+        session_start();
+        $_SESSION['login'] = true;
+        $_SESSION['useremail'] = $email;
+        header("location: about.php");
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +26,7 @@
 <?php
 
 ?>
+
 <body>
     <div class="main">
         <div class="content">

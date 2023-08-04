@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 * {
    margin: 0px;
    padding: 0px;
@@ -8,7 +9,12 @@ body {
    display: flex;
    font-family: Arial, Helvetica, sans-serif;
 }
-
+/* #bgimage{
+   position: absolute;
+   width: 100%;
+   z-index: -1;
+   height: 100%;
+} */
 .sidebar {
    width:278px;
    min-width: 278px;
@@ -63,31 +69,40 @@ nav {
 .nav1-upperpart {
    display: flex;
    justify-content: space-around;
+   margin-right: 24px;
    align-items: center;
    height: 55.5px;
    text-align: left;
    background-color: rgb(52 57 66);
    color: #ffffff;
+   font-weight: bold;
 }
 
 .nav1-lowerpart {
    width: 270px;
    /* margin-right: 5px; */
    height: 100vh;
-   
    display: flex;
    flex-direction: column;
    justify-content: left;
    background-color: rgb(62 68 79);
+}
+.nav1-lowerpart a i{
+   margin-right: 10px;
 }
 
 .ham-right {
    height: 20px;
    /* position: absoulte; */
 }
-
+#isearch{
+   position: absolute;
+   color: #737884;
+   margin-top: 11px;
+   margin-left: 18px;
+}
 #search-bar {
-   padding-left: 26px;
+   padding-left: 38px;
    padding-right: 10px;
    width: 95%;
    margin-top: 4px;
@@ -119,7 +134,7 @@ nav {
    height: 58px;
    display: flex;
    align-items: center;
-   padding-left: 37px;
+   padding-left:16px;
    /* border-radius: 8px; */
    /* display: block; */
    /* margin: auto; */
@@ -133,7 +148,7 @@ nav {
 
 .ajournals .nav2 {
    background-color: rgb(234, 8, 12);
-
+   
    /* overflow: inherit; */
    display: flex;
    /* justify-content: space-between; */
@@ -206,22 +221,73 @@ li a:hover {
    max-width: 850px;
    min-height: 87vh;
    margin-bottom: 40px;
+   /* box-shadow: #505761; */
+   box-shadow: rgba(17, 17, 26, 0.2) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
    /* height: 1000px; */
+   
+}
 
+#title{
+   font-family: 'Playfair Display', serif;
+   width: 200px;
+   height: 42px;
+   margin-left:8px;
+   /* margin-top: 10px; */
+   /* padding-top:10px; */
+   font-size: 31px;
+   border-style: none;
+   color:#505761;
+}
+#title::placeholder{
+   color: #91949c;
+}
+#idiary{
+   margin-top:22.5px;
+   color: #676c74;
+}
+#title:focus{
+   outline: none;
+}
+.save{
+   padding-top: 10px;
 }
 .Entries textarea{
    margin-top: 10px;
    width: 100%;
-   min-height: 80vh;
+   min-height: 70vh;
    padding: 10px;
+   font-size: 20px;
+   color: #303235;
+   border-style: none;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.Entries textarea:focus{
+   outline: none;
 }
 .Entries textarea::-webkit-scrollbar{
    display: none;
 }
 .eheading{
-   margin-top: 10px;
+   /* height: 80px; */
+   margin-top: 20px;
    display: flex;
    justify-content: space-between;
+   margin-bottom: 6px;
+   /* border: 1px solid red; */
+}
+.tahead{
+   display: flex;
+   /* background-color: red; */
+}
+.current{
+   color:#505761;
+   margin: 10px 0px;
+   display: flex;
+   justify-content: space-between;
+}
+#icalender{
+   color: #676c74;
 }
 .save{
    background-color: #ffffff;
