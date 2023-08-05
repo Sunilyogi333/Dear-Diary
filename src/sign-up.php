@@ -6,15 +6,15 @@ if (isset($_POST['submit'])) {
     $uemail = $_POST['uemail'];
     $upassword = $_POST['upassword'];
     $cpassword = $_POST['cpassword'];
-   if(!empty($uname)&&!empty($uemail)&&!empty($cpassword)){
-    if ($upassword = $cpassword) {
+       if(!empty($uname)&&!empty($uemail)&&!empty($cpassword)){
+        if ($upassword = $cpassword) {
         $sql = "
-    INSERT INTO users(uname,uemail,upassword,cpassword)
-    VALUES ('$uname','$uemail','$upassword', current_timestamp())
+    INSERT INTO users(uname,uemail,upassword)
+    VALUES ('$uname','$uemail','$upassword')
     ";
     $result = mysqli_query($conn,$sql);
     header('location:login.php');
-    }
+    } 
     else{
         echo "Enter credentials first";
     }

@@ -34,14 +34,4 @@ textarea.style.height =`${taHeight}px`;
    document.getElementById('time').innerText=time;
  });
 
- //dropdown
- let dropdownId = document.getElementById('drop')
- console.log('1');
- function toggleMenu(){   
-   const val =  dropdownId.className
-   if(val ==='open-menu')
-   dropdownId.className = 'dropdown'
-   else
-   dropdownId.className = 'open-menu'
-}
 

@@ -174,14 +174,56 @@ nav {
 }
 
 .nav2 ul li {
+   /* font-weight: 600; */
    padding: 15px 30px;
 }
 
 .nav2 ul li a i {
    padding-right: 7px;
 }
-.nav2 .dropdown ul{
-   background-color:green;
+#line{
+   height: 80px;
+   /* margin-right: 3px; */
+   /* padding-right: 40px; */
+   border-left: 1px solid black;
+}
+.dropdown{
+   /* background-color:green; */
+   position: absolute;
+   top: 100%;
+   right: 1%;
+   width: 200px; 
+   /* display: none; */
+   /* height: 0px; */
+   overflow: hidden;
+   transition: max-height 0.5s;
+}
+.open-menu{
+   display: none;
+   height: 0px;
+}
+.dropdown ul 
+{
+   margin-top: 7px;
+   /* display: inline; */
+   width: 200px;
+   right: 0.1%;
+   background-color: yellow;
+   border-radius: 5px;
+}
+.dropdown.open-menu{
+   /* background-color: green; */
+   max-height: 144px;
+}
+.dropdown ul li a{
+   margin-right: 2px;
+   display: block;
+   color: black;
+   text-align: left;
+
+}
+.dropdown ul li a i{
+   margin-right: 2px;
 }
 .navbar {
    height: 50px;
@@ -252,10 +294,6 @@ li a:hover {
 }
 .save{
    padding-top: 10px;
-}
-.save:hover{
-   text-decoration: underline;
-   cursor:pointer;
 }
 .Entries textarea{
    margin-top: 10px;

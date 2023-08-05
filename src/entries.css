@@ -17,6 +17,7 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #f0f2f5;
     /* background-color: red; */
  }
  
@@ -41,7 +42,7 @@ body{
  }
  
  nav {
-    background: #3E5151;
+    background:red;
     position: fixed;
     right: 0px;
     left: 0px;
@@ -64,14 +65,43 @@ body{
     text-decoration: underline;
  }
  
-th,thead,tr{
-    padding-top: 10px;
-    border-collapse: collapse;
-    border-bottom: 1px solid rgb(99, 95, 95);
-}
-td{
-    padding: 10px 10px;
-}
+
 .content{
     margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+caption{
+   font-size: 40px;
+}
+th,thead,tr{
+   margin: 10px 20px;
+   font-size: 35px;
+   padding-top: 10px;
+   border-collapse: collapse;
+   border-bottom: 1px solid rgb(99, 95, 95);
+}
+td{
+   color: #303235;
+   /* font-weight: bold; */
+   padding: 10px 50px;
+}
+.title{
+   color: #303235;
+}
+td i{
+   margin-right: 10px;
+}
+td a:hover{
+   cursor: pointer;
+   text-decoration: underline;
+}
+#delete{
+   /* font-size:10px;  */
+   margin-right: 8px;
+   color: red;
+}
+#edit{
+   color: green;
 }

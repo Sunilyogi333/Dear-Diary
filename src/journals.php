@@ -27,7 +27,7 @@ if(isset($_POST['save'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journals</title>
-    <link rel="stylesheet" href="Journals.css?v=<?$version?>">
+    <link rel="stylesheet" href="Journals.css?v=<?php $version?>">
     <script src="https://kit.fontawesome.com/5a78363638.js" crossorigin="anonymous"></script>
 </head>
 
@@ -41,23 +41,29 @@ if(isset($_POST['save'])){
                 <div class="nav1-lowerpart">
                     <i id="isearch" class="fa-solid fa-magnifying-glass"></i>
                     <input id="search-bar" type="text" placeholder="Search Journal...">
-                    <a class="ajournals" href="read.php"><i class="fa fa-plus-circle fa-lg"></i>New Journal</a>
-                    <a class="ajournals" href="#"><i class="fa fa-th-list fa-lg"></i>View all Entries</a>
+                    <a class="ajournals" href="journals.php"><i class="fa fa-plus-circle fa-lg"></i>New Journal</a>
+                    <a class="ajournals" href="entries.php"><i class="fa fa-th-list fa-lg"></i>View all Entries</a>
                 </div>
             </div>
         </nav>
     </div>
     <div class="main">
-        <div class="navbar">
+    <div class="navbar">
             <nav>
                 <div class="nav2">
                     <ul>
                         <li><a href="/Dear-Diary/src/about.php">About</a></li>
                         <li><a href="/Dear-Diary/src/journals.php">Journals</a></li>
-                        <li><a href="#"><i class="fa fa-caret-down"></i><?php echo $_SESSION['uname'] ?></a></li>
+                        <li><a id="line" href="#" onclick="toggleMenu()"><i class="fa fa-caret-down"></i>sunil</a></li>
                     </ul>
-                    
-                    </div>
+                 </div>
+                    <div class="open-menu" id="drop" >
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-gear fa-lg"></i>Settings</a></li>
+                        <li><a href="#"><i class="fa-regular fa-circle-question fa-lg"></i>help & support</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>logout</a></li>
+                    </ul>
+                   </div>
             </nav>
         </div>
         <div class="content">
@@ -88,7 +94,7 @@ if(isset($_POST['save'])){
         </div>
         </form>
     </div>
-    <script src="journals.js"></script>
+    <script src="journals.js?v=<?$version?>"></script>
 </body>
 
 </html>

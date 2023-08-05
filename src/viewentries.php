@@ -1,3 +1,39 @@
+
+<?php
+include "connect.php";
+include "config.php";
+include "read.php";
+if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
+    header('location:login.php');
+    exit;
+}
+//retriving entries
+if(isset($_GET['etitle'])){
+    $etitle=$_GET['etitle'];
+    $sql=" SELECT * FROM Entries WHERE etitle='$etitle'
+    ";
+    $eresult =mysqli_query($conn, $sql);
+    $row=mysqli_fetch_assoc($eresult);
+    $id = $row['id'];
+  } 
+
+//Edit
+
+if(isset($_POST['save'])){
+    $etitle= $_POST['etitle'];
+    $entries= $_POST['entries'];
+    $users_id=$_SESSION['id'];
+    if(!empty($etitle)&&!empty($entries)){
+        $sql = "
+        UPDATE Entries
+        SET etitle ='$etitle', entries='$entries'
+        WHERE id ='$id'
+        ";
+        $result=mysqli_query($conn,$sql);
+        header('location:journals.php');
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,22 +41,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journals</title>
-    <link rel="stylesheet" href="Journals.css">
+    <link rel="stylesheet" href="Journals.css?v=<?$version?>">
     <script src="https://kit.fontawesome.com/5a78363638.js" crossorigin="anonymous"></script>
 </head>
 
 <body background="/Dear-Diary/img/Journal_background-Image.jpg">
-    <div class="sidebar">
+<div class="sidebar">
         <nav>
-            <div class="nav1">
+             <div class="nav1">
                 <div class="nav1-upperpart">
-                    <p>Journal</p>
+                    <p><?php echo $_SESSION['uname'] ?>'s Journal</p>
                 </div>
                 <div class="nav1-lowerpart">
                     <i id="isearch" class="fa-solid fa-magnifying-glass"></i>
                     <input id="search-bar" type="text" placeholder="Search Journal...">
-                    <a class="ajournals" href="read.php"><i class="fa fa-plus-circle fa-lg"></i>New Journal</a>
-                    <a class="ajournals" href="#"><i class="fa fa-th-list fa-lg"></i>View all Entries</a>
+                    <a class="ajournals" href="journals.php"><i class="fa fa-plus-circle fa-lg"></i>New Journal</a>
+                    <a class="ajournals" href="entries.php"><i class="fa fa-th-list fa-lg"></i>View all Entries</a>
                 </div>
             </div>
         </nav>
@@ -32,25 +68,19 @@
                     <ul>
                         <li><a href="/Dear-Diary/src/about.php">About</a></li>
                         <li><a href="/Dear-Diary/src/journals.php">Journals</a></li>
-                        <li><a id="line" href="#" onclick="toggleMenu()"><i class="fa fa-caret-down"></i>sunil</a></li>
+                        <li><a href="#"><i class="fa fa-caret-down"></i><?php echo $_SESSION['uname'] ?></a></li>
                     </ul>
-                 </div>
-                    <div class="open-menu" id="drop" >
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-gear fa-lg"></i>Settings</a></li>
-                        <li><a href="#"><i class="fa-regular fa-circle-question fa-lg"></i>help & support</a></li>
-                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>logout</a></li>
-                    </ul>
-                   </div>
+                    
+                    </div>
             </nav>
         </div>
         <div class="content">
-            <form>
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
                 <div class="Entries">
                     <div class="eheading">
                         <div class="tahead">
                             <div><i id="idiary" class="fa-solid fa-book fa-xl"></i></div>
-                            <div><input id="title" type="text" placeholder="Entry Title"></div>
+                            <div><input id="title" type="text" name="etitle" placeholder="Entry Title"></div>
                         </div>
                         <div id="save">
                             <input class="save" type="submit" name="save" value="Save now">
@@ -67,23 +97,16 @@
                         </div>
                     </div>
                     <hr>
-                    <textarea name="Entry" id="Entry" placeholder="Start Writing..."></textarea>
+            
+                    <textarea name="entries" id="Entry" placeholder="Start Writing..."></textarea>
                 </div>
         </div>
         </form>
     </div>
     <script src="journals.js"></script>
     <script>
-        let dropdownId = document.getElementById('drop')
-      function toggleMenu(){
-            
-        const val =  dropdownId.className
-        if(val ==='open-menu')
-        dropdownId.className = 'dropdown'
-        else
-        dropdownId.className = 'open-menu'
-
-     }
+        document.getElementById('title').value= '<?php echo $etitle; ?>';
+        document.getElementById('Entry').innerText='<?php echo $row['entries'];?>';
     </script>
 </body>
 
