@@ -73,9 +73,6 @@ body {
     background-color: #ffffff;
     /* background-color: red; */
 }
-form{
-    /* text-align: center; */
-}
 
 #log-in {
     font-size: 32px;
@@ -85,6 +82,7 @@ input {
     width: 100%;
     height: 48px;
     margin-top: 20px;
+    margin-bottom: 5px;
     padding: 10px 14px;
     font-size: 17px;
     border-radius: 8px;
@@ -114,7 +112,7 @@ a:hover {
 }
 
 #pass {
-    margin: 20px 0px;
+    font-size: 15px;
     text-align: left;
 }
 

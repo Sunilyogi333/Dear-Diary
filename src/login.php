@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+include 'config.php';
 if (isset($_POST['submit'])) {
     $email = $_POST['uemail'];
     $password = $_POST['upassword'];
@@ -21,7 +22,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login in</title>
-    <link rel="stylesheet" href="login-in.css">
+    <link rel="stylesheet" href="login-in.css?v=<?$version?>">
 </head>
 <?php
 
@@ -40,6 +41,7 @@ if (isset($_POST['submit'])) {
                     <p id="log-in">Welcome</p>
                     <input type="email" name="uemail" placeholder="Email or phone number">
                     <input type="password" name="upassword" placeholder="Password" required>
+                    
                     <a id="pass" href="#">Forgot password ?</a>
                     <input class="sub" type="submit" name="submit" value="Log in">
                     <div class="sign">

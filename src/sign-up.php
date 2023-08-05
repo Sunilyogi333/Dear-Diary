@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+include 'config.php';
 if (isset($_POST['submit'])) {
     $uname = $_POST['uname'];
     $uemail = $_POST['uemail'];
@@ -27,7 +28,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <link rel="stylesheet" href="sign-up.css">
+    <link rel="stylesheet" href="sign-up.css?v=<?=$version?>">
 </head>
 
 <body>

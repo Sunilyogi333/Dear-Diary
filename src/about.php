@@ -1,6 +1,6 @@
 <?php
 include 'connect.php';
-session_start();
+include'read.php';
 if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
     header('location:login.php');
     exit;
@@ -26,7 +26,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
                     <ul>
                         <li><a href="about.php">About</a></li>
                         <li><a href="journals.php">Journals</a></li>
-                        <li><a href="#"><i class="fa fa-caret-down"></i>Sunil</a></li>
+                        <li><a href="#"><i class="fa fa-caret-down"></i><?php echo $_SESSION['uname'] ?></a></li>
                     </ul>
             </nav>
         </div>

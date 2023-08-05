@@ -16,7 +16,7 @@ $nparts=explode(" ",$name);
 $fname=$nparts[0];
 
 // Assign the last name
-$lname=$nparts[1];
+// $lname=$nparts[1];
 
 $_SESSION['uname'] = $fname;
 $_SESSION['id'] = $row['id'];
