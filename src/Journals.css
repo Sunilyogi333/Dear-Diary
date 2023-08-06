@@ -19,6 +19,8 @@ body {
    width:278px;
    min-width: 278px;
    height: 100vh;
+   /* background-color: #2f2f2f; */
+
    background-color: rgb(52 57 66);
    position: fixed;
    left: 0px;
@@ -38,7 +40,9 @@ body {
 
 .navbar {
    height: 50px;
-   background-color: #ff0015;
+   /* background-color: red; */
+   background-color: rgb(62 68 79);
+
    position: fixed;
    left: 278px;
    right: 0px;
@@ -73,6 +77,8 @@ nav {
    align-items: center;
    height: 55.5px;
    text-align: left;
+   /* background-color: #2f2f2f; */
+
    background-color: rgb(52 57 66);
    color: #ffffff;
    font-weight: bold;
@@ -181,20 +187,12 @@ nav {
 .nav2 ul li a i {
    padding-right: 7px;
 }
-#line{
-   height: 80px;
-   /* margin-right: 3px; */
-   /* padding-right: 40px; */
-   border-left: 1px solid black;
-}
 .dropdown{
    /* background-color:green; */
    position: absolute;
    top: 100%;
    right: 1%;
    width: 200px; 
-   /* display: none; */
-   /* height: 0px; */
    overflow: hidden;
    transition: max-height 0.5s;
 }
@@ -208,22 +206,20 @@ nav {
    /* display: inline; */
    width: 200px;
    right: 0.1%;
-   background-color: yellow;
+   background-color: #515358;
    border-radius: 5px;
-}
-.dropdown.open-menu{
-   /* background-color: green; */
-   max-height: 144px;
+   padding: 5px 10px;
 }
 .dropdown ul li a{
+   padding-top: 10px;
    margin-right: 2px;
    display: block;
-   color: black;
+   color:#ffffff;
    text-align: left;
 
 }
 .dropdown ul li a i{
-   margin-right: 2px;
+   margin-right:6px;
 }
 .navbar {
    height: 50px;
@@ -266,7 +262,7 @@ li a:hover {
    min-height: 87vh;
    margin-bottom: 40px;
    /* box-shadow: #505761; */
-   box-shadow: rgba(17, 17, 26, 0.2) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+   box-shadow: rgba(17, 17, 26, 0.3) 0px 4px 16px, rgba(17, 17, 26, 0.06) 0px 8px 32px;
    /* height: 1000px; */
    
 }

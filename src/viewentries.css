@@ -224,7 +224,7 @@ li a:hover {
    min-height: 87vh;
    margin-bottom: 40px;
    /* box-shadow: #505761; */
-   box-shadow: rgba(17, 17, 26, 0.2) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+   box-shadow: rgba(17, 17, 26, 0.3) 0px 4px 16px, rgba(17, 17, 26, 0.06) 0px 8px 32px;
    /* height: 1000px; */
    
 }

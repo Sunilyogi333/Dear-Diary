@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="log-in-user">
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-                    <p id="log-in">Welcome</p>
+                    <p id="log-in">Welcome!</p>
                     <input type="email" name="uemail" placeholder="Email or phone number">
                     <input type="password" name="upassword" placeholder="Password" required>
                     

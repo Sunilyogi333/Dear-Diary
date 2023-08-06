@@ -40,7 +40,7 @@ if(isset($_POST['save'])){
                 </div>
                 <div class="nav1-lowerpart">
                     <i id="isearch" class="fa-solid fa-magnifying-glass"></i>
-                    <input id="search-bar" type="text" placeholder="Search Journal...">
+                    <input id="search-bar" type="search" placeholder="Search Journal...">
                     <a class="ajournals" href="journals.php"><i class="fa fa-plus-circle fa-lg"></i>New Journal</a>
                     <a class="ajournals" href="entries.php"><i class="fa fa-th-list fa-lg"></i>View all Entries</a>
                 </div>
@@ -54,14 +54,15 @@ if(isset($_POST['save'])){
                     <ul>
                         <li><a href="/Dear-Diary/src/about.php">About</a></li>
                         <li><a href="/Dear-Diary/src/journals.php">Journals</a></li>
-                        <li><a id="line" href="#" onclick="toggleMenu()"><i class="fa fa-caret-down"></i>sunil</a></li>
+                        <li><a id="line" href="#" onclick="toggleMenu()"><i class="fa fa-caret-down"></i><?php echo $_SESSION['uname'] ?></a></li>
                     </ul>
                  </div>
                     <div class="open-menu" id="drop" >
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-gear fa-lg"></i>Settings</a></li>
                         <li><a href="#"><i class="fa-regular fa-circle-question fa-lg"></i>help & support</a></li>
-                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>logout</a></li>
+                        <li><a href="logout.php" onclick="return logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>logout</a></li>
+                        <li><a href="#"><i class="fa-regular fa-comment fa-lg"></i>Feedback</a></li>
                     </ul>
                    </div>
             </nav>
@@ -75,7 +76,7 @@ if(isset($_POST['save'])){
                             <div><input id="title" type="text" name="etitle" placeholder="Entry Title"></div>
                         </div>
                         <div id="save">
-                            <input class="save" type="submit" name="save" value="Save now">
+                            <input id="saveNow" class="save" type="submit" name="save" value="Save now" onclick="change()">
                         </div>
                     </div>
                     <hr>
@@ -95,6 +96,20 @@ if(isset($_POST['save'])){
         </form>
     </div>
     <script src="journals.js?v=<?$version?>"></script>
+    <script>
+        function change(){
+        document.getElementById('saveNow').value='saved';
+        }
+        function logout(){
+            let logout_sure= confirm('Are you sure you want to logout?');
+            if(logout_sure){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -57,7 +57,7 @@ $result = mysqli_query($conn, $sql);
                                     <?php echo $row['reg_time']; ?>
                                 </td>
 
-                                <td><a id="delete" href="delete.php?id=<?php echo $row['id'];?>">Delete</a>
+                                <td><a id="delete" href="delete.php?id=<?php echo $row['id']; ?>" onclick="return check();">Delete</a>
                                     <a id="edit" href="viewentries.php?etitle=<?php echo $row['etitle']; ?>">Edit</a>
                                 </td>
                             </tr>
@@ -69,6 +69,18 @@ $result = mysqli_query($conn, $sql);
             </table>
         </div>
     </div>
+    <script>
+        function check(){
+        let checked = confirm('Are you sure? You will not be able to recover the data.');
+        if(checked)
+       {
+        return true;
+       }
+       else{
+        return false;
+       }
+       }
+    </script>
 </body>
 
 </html>

@@ -54,7 +54,7 @@ if(isset($_POST['save'])){
                 </div>
                 <div class="nav1-lowerpart">
                     <i id="isearch" class="fa-solid fa-magnifying-glass"></i>
-                    <input id="search-bar" type="text" placeholder="Search Journal...">
+                    <input id="search-bar" type="search" placeholder="Search Journal...">
                     <a class="ajournals" href="journals.php"><i class="fa fa-plus-circle fa-lg"></i>New Journal</a>
                     <a class="ajournals" href="entries.php"><i class="fa fa-th-list fa-lg"></i>View all Entries</a>
                 </div>
@@ -83,7 +83,7 @@ if(isset($_POST['save'])){
                             <div><input id="title" type="text" name="etitle" placeholder="Entry Title"></div>
                         </div>
                         <div id="save">
-                            <input class="save" type="submit" name="save" value="Save now">
+                            <input class="save" type="submit" name="save" value="Save now" onclick="return savechange()">
                         </div>
                     </div>
                     <hr>
@@ -103,10 +103,13 @@ if(isset($_POST['save'])){
         </div>
         </form>
     </div>
-    <script src="journals.js"></script>
+    <script src="viewentries.js"></script>
     <script>
         document.getElementById('title').value= '<?php echo $etitle; ?>';
         document.getElementById('Entry').innerText='<?php echo $row['entries'];?>';
+    </script>
+    <script>
+    
     </script>
 </body>
 

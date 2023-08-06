@@ -35,3 +35,14 @@ textarea.style.height =`${taHeight}px`;
  });
 
 
+// savechange message
+function savechange(){
+   let saved = confirm('Do you want to save changes?');
+   if(saved)
+  {
+   return true;
+  }
+  else{
+   return false;
+  }
+  }

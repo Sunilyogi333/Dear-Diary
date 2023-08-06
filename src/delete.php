@@ -1,10 +1,10 @@
 <?php 
+include 'connect.php';
 if(isset($_GET['id'])){
-    $etitle=$_GET['etitle'];
-    $sql=" SELECT * FROM Entries WHERE etitle='$etitle'
+    $id=$_GET['id'];
+    $sql=" DELETE FROM Entries WHERE id='$id'
     ";
-    $eresult =mysqli_query($conn, $sql);
-    $row=mysqli_fetch_assoc($eresult);
-    $id = $row['id'];
+    $dresult =mysqli_query($conn, $sql);
+    header('location:entries.php');
   } 
   ?>
