@@ -35,6 +35,42 @@ body {
 .nav2 ul li a i {
    padding-right: 7px;
 }
+.dropdown{
+   /* background-color:green; */
+   position: absolute;
+   top: 100%;
+   right: 1%;
+   width: 200px; 
+   overflow: hidden;
+   transition: max-height 0.5s;
+}
+.open-menu{
+   display: none;
+   height: 0px;
+}
+.dropdown ul 
+{
+   margin-top: 7px;
+   /* display: block; */
+   width: 300px;
+   right: 0.1%;
+   background-color: #515358;
+   border-radius: 5px;
+   /* padding: 5px 5px; */
+}
+.dropdown ul li a{
+   /* padding-top: 4px; */
+   margin-right: 2px;
+   display: block;
+   color:#ffffff;
+   /* color: red; */
+   text-align: left;
+
+}
+.dropdown ul li a i{
+   margin-right:6px;
+}
+ 
 
 .navbar {
    height: 50px;

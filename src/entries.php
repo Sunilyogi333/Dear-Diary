@@ -15,7 +15,7 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entries</title>
-    <link rel="stylesheet" href="entries.css">
+    <link rel="stylesheet" href="entries.css?v=<?php $version?>">
     <script src="https://kit.fontawesome.com/5a78363638.js" crossorigin="anonymous"></script>
 
 </head>
@@ -28,10 +28,18 @@ $result = mysqli_query($conn, $sql);
                     <ul>
                         <li><a href="about.php">About</a></li>
                         <li><a href="journals.php">Journals</a></li>
-                        <li><a href="#"><i class="fa fa-caret-down"></i>
+                        <li><a href="#" onclick="toggleMenu()"><i class="fa fa-caret-down"></i>
                                 <?php echo $_SESSION['uname'] ?>
                             </a></li>
                     </ul>
+                    <div class="open-menu" id="drop" >
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-gear fa-lg"></i>Settings</a></li>
+                        <li><a href="#"><i class="fa-regular fa-circle-question fa-lg"></i>help & support</a></li>
+                        <li><a href="logout.php" onclick="return logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>logout</a></li>
+                        <li><a href="#"><i class="fa-regular fa-comment fa-lg"></i>Feedback</a></li>
+                    </ul>
+                   </div>
             </nav>
         </div>
         <div class="content">
@@ -70,6 +78,7 @@ $result = mysqli_query($conn, $sql);
         </div>
     </div>
     <script>
+
         function check(){
         let checked = confirm('Are you sure? You will not be able to recover the data.');
         if(checked)
@@ -80,6 +89,17 @@ $result = mysqli_query($conn, $sql);
         return false;
        }
        }
+
+       //dropdown
+       let dropdownId = document.getElementById('drop')
+       console.log('1');
+     function toggleMenu(){   
+     const val =  dropdownId.className
+     if(val ==='open-menu')
+     dropdownId.className = 'dropdown'
+     else
+    dropdownId.className = 'open-menu'
+     }
     </script>
 </body>
 

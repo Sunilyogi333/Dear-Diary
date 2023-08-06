@@ -70,7 +70,14 @@ if(isset($_POST['save'])){
                         <li><a href="/Dear-Diary/src/journals.php">Journals</a></li>
                         <li><a href="#"><i class="fa fa-caret-down"></i><?php echo $_SESSION['uname'] ?></a></li>
                     </ul>
-                    
+                    <div class="open-menu" id="drop" >
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-gear fa-lg"></i>Settings</a></li>
+                        <li><a href="#"><i class="fa-regular fa-circle-question fa-lg"></i>help & support</a></li>
+                        <li><a href="logout.php" onclick="return logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>logout</a></li>
+                        <li><a href="#"><i class="fa-regular fa-comment fa-lg"></i>Feedback</a></li>
+                    </ul>
+                   </div>
                     </div>
             </nav>
         </div>
