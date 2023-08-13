@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
                     <input type="email" name="uemail" placeholder="Email or phone number">
                     <input type="password" name="upassword" placeholder="Password" required>
                     
-                    <a id="pass" href="#">Forgot password ?</a>
+                    <a id="pass" href="forget_password.php">Forgot password ?</a>
                     <input class="sub" type="submit" name="submit" value="Log in">
                     <div class="sign">
                         <p>Don't have an account?</p><a href="sign-up.php">sign-up</a>

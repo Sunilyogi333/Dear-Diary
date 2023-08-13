@@ -1,11 +1,24 @@
 <?php
 include 'connect.php';
-include'read.php';
+include 'config.php';
+include 'read.php';
 if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
     header('location:login.php');
     exit;
 }
+if (isset($_POST['fsubmit'])) {
+    $fname = $_POST['fname'];
+    $femail = $_POST['femail'];
+    $feedback= $_POST['feedback'];
+        $fsql = "
+        INSERT INTO feedbacks(fname,femail,feedback)
+        VALUES ('$fname','$femail','$feedback')
+        ";
+            $fresult = mysqli_query($conn, $fsql);
+            // echo "<script>alert('Feedback submitted')</script>";
+    } 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +27,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="about.css?v=<?php $version ?>">
     <script src="https://kit.fontawesome.com/5a78363638.js" crossorigin="anonymous"></script>
 </head>
 
@@ -23,18 +36,19 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
         <div class="navbar">
             <nav>
                 <div class="nav2">
-                    <ul>
+                    <ul class="uppernav">
                         <li><a href="about.php">About</a></li>
                         <li><a href="journals.php">Journals</a></li>
-                        <li><a href="#" onclick=""><i class="fa fa-caret-down"></i><?php echo $_SESSION['uname'] ?></a></li>
+                        <li><a href="#" onclick="toggleMenu()"><i class="fa fa-caret-down"></i><?php echo $_SESSION['uname'] ?></a></li>
                     </ul>
                     <div class="open-menu" id="drop" >
-                    <ul>
+                      <ul id="lowernav">
                         <li><a href="#"><i class="fa-solid fa-gear fa-lg"></i>Settings</a></li>
                         <li><a href="#"><i class="fa-regular fa-circle-question fa-lg"></i>help & support</a></li>
                         <li><a href="logout.php" onclick="return logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>logout</a></li>
                         <li><a href="#"><i class="fa-regular fa-comment fa-lg"></i>Feedback</a></li>
-                    </ul>
+                       </ul>
+                   </div>
                    </div>
             </nav>
         </div>
@@ -43,7 +57,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
                 <div class="branding">
                     <img id="brand-logo" src="/Dear-Diary/img/Branding-photo.png" alt="branding photo">
                 </div>
-                <div class="intro">
+                <div class="intro">     
                     <p class="para1">What are you writing for?
                         Whether you're looking for a tool to record your daily emotions and activities in a reflective
                         journal,
@@ -56,7 +70,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
                         the
                         process of writing itself.
                     </p>
-                    <a class="brand-get-started-btn" href="#">Start Your Journal Now !</a>
+                    <a class="brand-get-started-btn" href="journals.php">Start Your Journal Now !</a>
                 </div>
             </div>
             <div class="part-2">
@@ -71,7 +85,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
                         so you can rest easy
                         knowing that your entries are secure in the Penzu Vault
                     </p><br><br>
-                    <a class="get-started-btn" href="#!">Get Started</a>
+                    <a class="get-started-btn" href="journals.php">Get Started</a>
                 </div>
                 <div class="part2-ii">
                     <br>
@@ -89,7 +103,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
                         phones and tablets.
                     </p>
                     <br><br>
-                    <a class="get-started-btn" href="#!">Get Started</a>
+                    <a class="get-started-btn" href="journals.php">Get Started</a>
                 </div>
             </div>
             <div class="part4">
@@ -202,17 +216,17 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
                 <h2>Feel Free to drop us your Feedback !</h2>
             </div>
             <div class="part-6">
-                <form class="p6-feedback">
+                <form class="p6-feedback" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" >
                     <div class="part6-i">
                         <div class="givefeedback">
                             <label for="Full Name">Full Name</label>
-                            <input type="text">
+                            <input type="text" name="fname" required>
                         </div>
                         <div class="givefeedback">
                             <label for="Email">Email</label>
-                            <input type="email">
+                            <input type="email" name="femail" required>
                         </div>
-                        <input class="fsubmit" type="submit">
+                        <input class="fsubmit" type="submit" name="fsubmit" required>
                     </div>
                     <div class="part6-ii">
                         <textarea name="feedback" placeholder="Enter your opinion here..." id="feedback" cols="30"
@@ -230,13 +244,14 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
 <script>
 //dropdown
        let dropdownId = document.getElementById('drop')
-       console.log('1');
-     function toggleMenu(){   
+       function toggleMenu(){   
+     console.log('1');
      const val =  dropdownId.className
      if(val ==='open-menu')
      dropdownId.className = 'dropdown'
      else
-    dropdownId.className = 'open-menu'
+       dropdownId.className = 'open-menu'
      }
     </script>
 </html>
++

@@ -30,7 +30,6 @@ body {
     width: 1100px;
     border-radius: 8px;
    /* background-image:linear-gradient(#3E5151,#DECBA4); */
-
     background-color: #ffffff;
     /* background-color: #2c3940; */
     box-shadow: rgba(185, 178, 182, 0.4) -5px 5px, rgba(175, 169, 173, 0.3) -10px 10px, rgba(192, 190, 191, 0.2) -15px 15px, rgba(227, 220, 225, 0.1) -20px 20px, rgba(233, 230, 232, 0.05) -25px 25px;
@@ -43,7 +42,6 @@ body {
     width: 600px;
     /* gap: 60px; */
    /* background-image:linear-gradient(#3E5151,#DECBA4); */
-
     /* background-color: #ffffff; */
     display: flex;
     flex-direction: column;
@@ -84,17 +82,27 @@ body {
 }
 
 #log-in {
+    font-weight: bold;
+    color: #311a1a;
     font-size: 32px;
+    margin-bottom: 2px;
 }
-
+#error_show{
+    position: absolute;
+    margin-top: 35px;
+    color: red;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
 input {
     width: 100%;
     height: 48px;
-    margin-top: 20px;
+    margin-top: 22px;
     padding: 10px 14px;
     font-size: 17px;
     border-radius: 8px;
     border: 1px solid rgb(170, 160, 160);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 input::placeholder {
@@ -112,7 +120,14 @@ input:focus::placeholder{
 input:focus {
     outline: 1px solid #008fdc;
 }
-
+#password_criteria{
+    margin-right: 40px;
+    margin-top: 252px;
+    font-style: italic;
+    position: absolute;
+    font-size: 12px;
+    color: #808691;
+}
 a {
     text-decoration: none;
     color: #008fdc;
@@ -158,10 +173,11 @@ a:hover {
 }
 
 #terms {
-    margin-top: 18px;
+    margin-top: 20px;
+    font-style: italic;
     margin-right: 10px;
     width: 50%;
-    font-size: 13px;
+    font-size: 14px;
     color: #808691;
 }
 

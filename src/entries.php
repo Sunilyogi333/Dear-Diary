@@ -2,7 +2,10 @@
 include 'connect.php';
 include 'read.php';
 include 'config.php';
-
+if (!isset($_SESSION['login']) || $_SESSION['login'] != true) {
+    header('location:login.php');
+    exit;
+}
 //retriving data
 $users_id = $_SESSION['id'];
 $sql = " SELECT * FROM Entries WHERE users_id='$users_id'";

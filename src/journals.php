@@ -12,6 +12,7 @@ if(isset($_POST['save'])){
     $entries= $_POST['entries'];
     $users_id=$_SESSION['id'];
     if(!empty($etitle)&&!empty($entries)){
+    
         $sql = "
         INSERT INTO Entries(etitle,entries,users_id)
         VALUES('$etitle','$entries','$users_id')
