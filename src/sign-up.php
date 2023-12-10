@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     //checking email already exists
     $checkSql = "SELECT * FROM users WHERE uemail='$uemail'";
     $checkResult = mysqli_query($conn, $checkSql);
-    $checkNum=mysqli_num_rows($checkResult);
+    $checkNum= mysqli_num_rows($checkResult);
     if ($checkNum<1) {
         // echo "hello";
         $sql = "
