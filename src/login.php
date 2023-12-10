@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
         session_start();
         $_SESSION['login'] = true;
         $_SESSION['useremail'] = $email;
-        header("location: index.php");
+        header("location: about.php");
     }
 }
 ?>
